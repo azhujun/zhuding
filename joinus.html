@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>加入我们</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="joinus.css">
+</head>
+
+<body>
+    <!-- header -->
+    <div class="nav-bar">
+        <div class="view-1024">
+            <a class="tab" href="/" exact>
+                <img src="./assets/zd-logo.png" alt="">
+            </a>
+            <a class="tab rl" href="/" exact>首页</a>
+            <a class="tab rl active" href="/joinus">加入我们</a>
+            <a class="tab rl" href="/aboutus">关于我们</a>
+            <a class="tab rl" href="/cooperation">合作</a>
+            <a class="tab" href="/download">下载</a>
+        </div>
+    </div>
+
+    <div class="about-page">
+        <div class="nav-bar-bg"></div>
+        <div class="view-1200">
+            <div class="banner-img">
+                <!-- 450*1200 -->
+                <img src="./assets/2.jpg" alt="">
+            </div>
+            <p class="h-txt">正在寻找富有创意和想法的你，加入我们，我们一起收获梦想</p>
+            <div class="zp-list" id="app">
+                <div class="zp-tabs">
+                    <div class="zp-tab" v-for="(list, index) in zplist" :key="index" :class="{'active':index==showIndex}" @click="changeIndex(index)">
+                        {{list.name}}
+                    </div>
+                </div>
+                <div class="table" v-if="showList.length">
+                    <div class="rows table-head">
+                        <div class="col-1">#</div>
+                        <div class="col-5">职位名称</div>
+                        <div class="col-1">职位类型</div>
+                        <div class="col-1">工作地点</div>
+                        <div class="col-1">发布时间</div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="rows table-body" v-for="(item,index) in showList" :key="index" :class="{'open':openItem==index}" @click="openHide(index)">
+                        <div class="table-box">
+                            <div class="col-1">{{index+1}}</div>
+                            <div class="col-5">{{item.title}}</div>
+                            <div class="col-1 c80">{{item.type}}</div>
+                            <div class="col-1 c80">{{item.city}}</div>
+                            <div class="col-1 c80">{{item.date}}</div>
+                            <div class="col-1 bg-jt">
+                                <img class="jt-img" src="./assets/jt.png" alt="">
+                            </div>
+                        </div>
+                        <div class="table-hidder">
+                            <pre>{{item.describe}}</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer-bar">
+        <div class="view-1024">
+            <footer>
+                <p class="footer-msg-top">
+                    <span>关于注定</span>
+                    <span>联系我们</span>
+                    <span>中文</span>
+                </p>
+                <p class="footer-msg">
+                    <b>@2018 注定</b> 成都灰虫子网络技术有限公司 蜀公网安备 11010502030901号 成都高新区天</p>
+                <p>违法和不良信息举报邮箱：support@zhuding.com</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                showIndex: 0,
+                openItem: null,
+                showList: [],
+                zplist: [
+                    {
+                        name: "技术类",
+                        list: [
+                            {
+                                title: "职位名称",
+                                type: "职位类别",
+                                city: "成都",
+                                date: "2018-08-08",
+                                describe: "岗位职责：\r\n1. 负责注定Android客户端架构设计；\r\n2. 负责注定Android客户端核心模块的开发，实现性能优化；"
+                            },
+                            {
+                                title: "职位名称",
+                                type: "职位类别",
+                                city: "成都",
+                                date: "2018-08-08",
+                                describe: "岗位职责：\r\n1. 负责注定Android客户端架构设计；\r\n2. 负责注定Android客户端核心模块的开发，实现性能优化；"
+                            },
+                            {
+                                title: "职位名称",
+                                type: "职位类别",
+                                city: "成都",
+                                date: "2018-08-08",
+                                describe: "岗位职责：\r\n1. 负责注定Android客户端架构设计；\r\n2. 负责注定Android客户端核心模块的开发，实现性能优化；"
+                            }
+                        ]
+                    },
+                    {
+                        name: "技术类",
+                        list: [
+                            {
+                                title: "职位名称",
+                                type: "职位类别",
+                                city: "成都",
+                                date: "2018-08-08",
+                                describe: "岗位职责：\r\n1. 负责注定Android客户端架构设计；\r\n2. 负责注定Android客户端核心模块的开发，实现性能优化；"
+                            },
+                            {
+                                title: "职位名称",
+                                type: "职位类别",
+                                city: "成都",
+                                date: "2018-08-08",
+                                describe: "岗位职责：\r\n1. 负责注定Android客户端架构设计；\r\n2. 负责注定Android客户端核心模块的开发，实现性能优化；"
+                            },
+                            {
+                                title: "职位名称",
+                                type: "职位类别",
+                                city: "成都",
+                                date: "2018-08-08",
+                                describe: "岗位职责：\r\n1. 负责注定Android客户端架构设计；\r\n2. 负责注定Android客户端核心模块的开发，实现性能优化；"
+                            }
+                        ]
+                    },
+                    {
+                        name: "技术类",
+                        list: [
+                            {
+                                title: "职位名称",
+                                type: "职位类别",
+                                city: "成都",
+                                date: "2018-08-08",
+                                describe: "岗位职责：\r\n1. 负责注定Android客户端架构设计；\r\n2. 负责注定Android客户端核心模块的开发，实现性能优化；"
+                            },
+                            {
+                                title: "职位名称",
+                                type: "职位类别",
+                                city: "成都",
+                                date: "2018-08-08",
+                                describe: "岗位职责：\r\n1. 负责注定Android客户端架构设计；\r\n2. 负责注定Android客户端核心模块的开发，实现性能优化；"
+                            },
+                            {
+                                title: "职位名称",
+                                type: "职位类别",
+                                city: "成都",
+                                date: "2018-08-08",
+                                describe: "岗位职责：\r\n1. 负责注定Android客户端架构设计；\r\n2. 负责注定Android客户端核心模块的开发，实现性能优化；"
+                            }
+                        ]
+                    },
+                    {
+                        name: "技术类",
+                        list: [
+                            {
+                                title: "职位名称",
+                                type: "职位类别",
+                                city: "成都",
+                                date: "2018-08-08",
+                                describe: "岗位职责：\r\n1. 负责注定Android客户端架构设计；\r\n2. 负责注定Android客户端核心模块的开发，实现性能优化；"
+                            },
+                            {
+                                title: "职位名称",
+                                type: "职位类别",
+                                city: "成都",
+                                date: "2018-08-08",
+                                describe: "岗位职责：\r\n1. 负责注定Android客户端架构设计；\r\n2. 负责注定Android客户端核心模块的开发，实现性能优化；"
+                            },
+                            {
+                                title: "职位名称",
+                                type: "职位类别",
+                                city: "成都",
+                                date: "2018-08-08",
+                                describe: "岗位职责：\r\n1. 负责注定Android客户端架构设计；\r\n2. 负责注定Android客户端核心模块的开发，实现性能优化；"
+                            }
+                        ]
+                    }
+                ]
+            },
+            mounted(){
+                // ajax
+                this.showList = this.zplist[0].list;
+            },
+            methods: {
+                openHide: function (index) {
+                    if (this.openItem == index) {
+                        this.openItem = null;
+                    } else {
+                        this.openItem = index;
+                    }
+                },
+                changeIndex: function (index) {
+                    this.showIndex = index;
+                    this.openItem = null;
+                    this.showList = this.zplist[index].list;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

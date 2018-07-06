@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关于我们</title>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.7&key=d34eb3c9ffe2011bc01cc24b2b131d33"></script> 
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./cooperation.css">
+</head>
+
+<body>
+    <!-- header -->
+    <div class="nav-bar">
+        <div class="view-1024">
+            <a class="tab noactive" href="/" exact>
+                <img src="./assets/zd-logo.png" alt="">
+            </a>
+            <a class="tab noactive rl" href="/" exact>首页</a>
+            <a class="tab rl" href="/joinus">加入我们</a>
+            <a class="tab rl" href="/aboutus">关于我们</a>
+            <a class="tab rl active" href="/cooperation">合作</a>
+            <a class="tab" href="/download">下载</a>
+        </div>
+    </div>
+
+    <!-- body -->
+    <div class="about-page">
+        <div class="nav-bar-bg"></div>
+        <div class="view-1200">
+            <div id="bmap"></div>
+            <div class="lxfs">
+                <h1 class="p-title">联系方式</h1>
+                <div class="row">
+                    <div class="col">
+                        <p class="t-col">灰虫子网络技术有限公司20号</p>
+                        <p>地址：成都高新区天晖路3605层5号</p>
+                        <p>邮编：610041</p>
+                        <p>电话：13118177901</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="t-col">媒体采访</p>
+                        <p>联系人：王先生</p>
+                        <p>Email：wang@zhuding.com</p>
+                    </div>
+                    <div class="col">
+                        <p class="t-col">商务合作</p>
+                        <p>联系人：王先生</p>
+                        <p>Email：wang@zhuding.com</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="t-col">广告投放</p>
+                        <p>联系人：王先生</p>
+                        <p>Email：wang@zhuding.com</p>
+                    </div>
+                    <div class="col">
+                        <p class="t-col">学生社团合作</p>
+                        <p>联系人：王先生</p>
+                        <p>Email：wang@zhuding.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- body -->
+
+    <!-- footer -->
+    <div class="footer-bar">
+        <div class="view-1024">
+            <footer>
+                <p class="footer-msg-top">
+                    <span>关于注定</span>
+                    <span>联系我们</span>
+                    <span>中文</span>
+                </p>
+                <p class="footer-msg">
+                    <b>@2018 注定</b> 成都灰虫子网络技术有限公司 蜀公网安备 11010502030901号 成都高新区天</p>
+                <p>违法和不良信息举报邮箱：support@zhuding.com</p>
+            </footer>
+        </div>
+    </div>
+    <script>
+        function mapInit(){
+            var map = new AMap.Map('bmap',{
+                zoom: 16,
+                center:[104.053544,30.581483]
+            });
+            var marker = new AMap.Marker({
+                icon: "http://webapi.amap.com/theme/v1.3/markers/n/mark_b.png",
+                position: [104.053544,30.581483]
+            });
+            map.add(marker);
+        }
+        window.onload=function(){
+            mapInit()
+        }
+    </script>
+</body>
+
+</html>

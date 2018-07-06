@@ -1,0 +1,170 @@
+.home-top {
+  height: 660px;
+  background: -webkit-linear-gradient(top, #102580, #5256dc);
+  /* Safari 5.1 - 6.0 */
+  /* Opera 11.1 - 12.0 */
+  /* Firefox 3.6 - 15 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#102580), to(#5256dc));
+  background: linear-gradient(to bottom, #102580, #5256dc);
+  /* 标准的语法 */
+}
+.home-top .view-1200 {
+  height: 660px;
+  position: relative;
+  overflow: hidden;
+}
+.home-top .view-1200 .hand-phone {
+  position: absolute;
+  bottom: -45px;
+  left: 100px;
+}
+.home-top .view-1200 .right-box {
+  width: 360px;
+  height: 400px;
+  position: absolute;
+  bottom: 0px;
+  right: 150px;
+}
+.home-top .view-1200 .download-link-boxs {
+  padding-top: 55px;
+}
+.home-top .view-1200 .download-link-boxs::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.home-top .view-1200 .qr-horve {
+  position: relative;
+  margin-right: 12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0;
+}
+.home-top .view-1200 .qr-horve::after {
+  content: '';
+  display: block;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.home-top .view-1200 .qr-horve:hover::after {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.home-top .view-1200 .big-qr {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  -webkit-transform: scale(0.23);
+  transform: scale(0.23);
+  -webkit-transform-origin: top right;
+  transform-origin: top right;
+  opacity: 0;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+.home-top .view-1200 .icon-QRcode {
+  position: relative;
+}
+.home-top .view-1200 .icon-QRcode:hover + a,
+.home-top .view-1200 .icon-QRcode:hover + a + a {
+  display: none;
+}
+.home-top .view-1200 .icon-QRcode:hover .big-qr {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+.home-card {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 180px 0;
+  text-align: center;
+}
+.home-card::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.f38 {
+  font-size: 38px;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.f18 {
+  font-size: 18px;
+  line-height: 1;
+}
+.f20 {
+  font-size: 20px;
+}
+.img-box {
+  width: 230px;
+  height: 230px;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.img-box:nth-child(5n) {
+  margin-right: 0;
+}
+.view-1190 {
+  margin-top: 88px;
+}
+.hover-box {
+  width: 230px;
+  height: 230px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 100px 18px 18px 18px;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  display: none;
+}
+.hover-box p {
+  margin-bottom: 10px;
+  width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.hover-box .name {
+  font-size: 18px;
+}
+.img-box:hover .hover-box {
+  display: block;
+}
+.download-card {
+  padding: 66px 0;
+  background-color: #f0f1f6;
+  text-align: center;
+}
+.download-card .todown {
+  margin-top: 50px;
+}
+.download-card .down-item {
+  margin-right: 10px;
+  font-size: 0;
+  display: inline-block;
+}
+.download-card .down-item:last-child {
+  margin-right: 0;
+}
